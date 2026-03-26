@@ -1,0 +1,156 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+body {
+  background-image: url("images (1).jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  /* Use a dark overlay so text is always readable against the image */
+  background-color: #333; 
+}
+
+p { color: white; }
+h2 { color: orange; }
+
+/* --- Layout --- */
+
+main {
+  display: flex;
+  flex-wrap: wrap; /* This allows sections to wrap on mobile */
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  min-height: 80vh;
+}
+
+.left {
+  flex: 1;
+  min-width: 320px; /* Minimum width before it wraps */
+  max-width: 600px;
+  padding: 10px;
+}
+
+.right {
+  flex: 1;
+  min-width: 320px;
+  max-width: 450px;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 8px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.mainbuttom {
+  margin-top: 30px;
+  width: 100%; /* Changed from 58% to be flexible */
+}
+
+/* --- Form --- */
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+input {
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%; /* Default to full width for easier mobile use */
+}
+
+/* Allows two inputs to sit side-by-side on larger screens */
+@media (min-width: 400px) {
+  input:not(.longImput) {
+    width: calc(50% - 5px);
+  }
+}
+
+button {
+  background-color: orange;
+  width: 100%; /* Full width is much easier to tap on phones */
+  padding: 12px;
+  border: none;
+  color: white;
+  margin: 10px 0;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+button:active { transform: translateY(2px); }
+
+/* --- Footer --- */
+
+footer {
+  width: 100%;
+  background-color: white;
+  margin-top: 100px; /* Replaces translateY for better spacing */
+  padding-bottom: 40px;
+}
+
+section {
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap; /* Stack reviews on mobile */
+  justify-content: space-around;
+  padding: 20px;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  transform: translateY(-40px); /* Lifted up into the main area */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+.reveiw {
+  text-align: center;
+  padding: 10px;
+  flex: 1 1 200px; /* Allow items to shrink and grow */
+}
+
+.footerButtom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerLeft {
+  flex: 1 1 300px;
+}
+
+.footerButtom > p {
+  flex: 1 1 300px;
+  color: #666 !important;
+}
+
+/* --- Mobile Specific Tweaks --- */
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .mainbuttom h1 {
+    font-size: 28px !important; /* Shrink title size on small screens */
+  }
+}
